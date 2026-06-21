@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="BsuirSchedule.Application/BsuirSchedule.Application.csproj" Id="d553cdef-50c5-4f91-8de8-be35bb49de1a" />
+  <Project Path="BsuirSchedule.Domain/BsuirSchedule.Domain.csproj" Id="a85ec24c-335f-49cf-b017-239c2f75ebfe" />
+  <Project Path="BsuirSchedule.Infrastructure/BsuirSchedule.Infrastructure.csproj" Id="f54c626f-c0df-46f6-83e8-5d873fb7976a" />
   <Project Path="BsuirSchedule.WebAPI/BsuirSchedule.WebAPI.csproj" />
 </Solution>

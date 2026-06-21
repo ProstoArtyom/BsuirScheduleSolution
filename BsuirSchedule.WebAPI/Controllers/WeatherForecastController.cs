@@ -1,3 +1,4 @@
+using BsuirSchedule.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BsuirSchedule.WebAPI.Controllers

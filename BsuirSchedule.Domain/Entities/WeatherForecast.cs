@@ -1,4 +1,4 @@
-namespace BsuirSchedule.WebAPI
+namespace BsuirSchedule.Domain.Entities
 {
     public class WeatherForecast
     {
