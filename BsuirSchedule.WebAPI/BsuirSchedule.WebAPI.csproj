@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BsuirSchedule.Domain\BsuirSchedule.Domain.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

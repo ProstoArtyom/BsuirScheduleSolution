@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BsuirSchedule.Domain\BsuirSchedule.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
