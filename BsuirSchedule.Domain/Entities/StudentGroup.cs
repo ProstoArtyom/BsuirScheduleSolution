@@ -2,9 +2,9 @@
 
 namespace BsuirSchedule.Domain.Entities
 {
-    public class Group
+    public class StudentGroup
     {
-        public required string Name { get; set; }
+        public required string GroupNumber { get; set; }
         public string? FacultyAbbrev { get; set; }
         public string? FacultyName { get; set; }
         public string? SpecialityName { get; set; }
