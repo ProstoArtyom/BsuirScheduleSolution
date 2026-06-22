@@ -9,7 +9,13 @@ namespace BsuirSchedule.Infrastructure.BsuirApi.Mapping
         {
             return new GroupScheduleSummary
             {
+                StartDate = raw.StartDate,
+                EndDate = raw.EndDate,
+                Schedules = raw.Schedules.ToSummaryDictionary(),
 
+                StartExamsDate = raw.StartExamsDate,
+                EndExamsDate = raw.EndExamsDate,
+                Exams = raw.Exams.ToSummaryList()
             };
         }
     }
