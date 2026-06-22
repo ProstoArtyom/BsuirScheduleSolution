@@ -14,11 +14,23 @@ namespace BsuirSchedule.WebAPI.Controllers
             _groupService = groupService;
         }
 
-        [HttpGet]
+        [HttpGet("studentGroups")]
         public async Task<ActionResult<IReadOnlyList<StudentGroupSummary>>> GetAllAsync(CancellationToken ct)
         {
             var groupList = await _groupService.GetAllGroupsAsync(ct);
             return Ok(groupList);
+        }
+
+        [HttpGet("groupSchedule")]
+        public async Task<ActionResult<GroupScheduleSummary>> GetGroupScheduleAsync([FromQuery] string groupNumber, CancellationToken ct)
+        {
+            var groupSchedule = await _groupService.GetGroupScheduleAsync(groupNumber, ct);
+            if (groupSchedule == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(groupSchedule);
         }
     }
 }

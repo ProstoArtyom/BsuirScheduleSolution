@@ -4,6 +4,7 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using BsuirSchedule.Application.DTOs;
 using BsuirSchedule.Infrastructure.BsuirApi.Mapping;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace BsuirSchedule.Infrastructure.BsuirApi
 {
@@ -22,12 +23,24 @@ namespace BsuirSchedule.Infrastructure.BsuirApi
 
         public async Task<IReadOnlyList<StudentGroupSummary>> GetAllGroupsAsync(CancellationToken ct)
         {
-            var raw = await _httpClient.GetFromJsonAsync<List<RawStudentGroupDto>>(
-                "student-groups", JsonOptions, ct) ?? [];
+            var raw = _httpClient.GetFromJsonAsAsyncEnumerable<RawStudentGroupDto>(
+                "student-groups", JsonOptions, ct);
 
-            return raw
+            return await raw
                 .Select(g => g.ToSummary())
-                .ToList();
+                .ToListAsync(ct);
+        }
+
+        public async Task<GroupScheduleSummary?> GetGroupScheduleAsync(string groupNumber, CancellationToken ct)
+        {
+            var url = QueryHelpers.AddQueryString("schedule", new Dictionary<string, string?>
+            {
+                { "studentGroup", groupNumber }
+            });
+            
+            var raw = await _httpClient.GetFromJsonAsync<RawGroupScheduleDto>(url, JsonOptions, ct);
+
+            return raw?.ToSummary();
         }
     }
 }

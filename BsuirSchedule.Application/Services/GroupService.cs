@@ -15,5 +15,10 @@ namespace BsuirSchedule.Application.Services
         {
             return await _bsuirClient.GetAllGroupsAsync(ct);
         }
+
+        public async Task<GroupScheduleSummary?> GetGroupScheduleAsync(string groupNumber, CancellationToken ct)
+        {
+            return await _bsuirClient.GetGroupScheduleAsync(groupNumber, ct);
+        }
     }
 }
