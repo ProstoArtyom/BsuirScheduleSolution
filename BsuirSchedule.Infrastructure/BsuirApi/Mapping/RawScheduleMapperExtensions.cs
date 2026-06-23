@@ -11,7 +11,7 @@ namespace BsuirSchedule.Infrastructure.BsuirApi.Mapping
             {
                 Auditories = rawScheduleDto.Auditories,
                 StartLessonTime = rawScheduleDto.StartLessonTime,
-                EndLessonTime = rawScheduleDto.EndLessonDate,
+                EndLessonTime = rawScheduleDto.EndLessonTime,
                 LessonTypeAbbrev = rawScheduleDto.LessonTypeAbbrev,
                 Note = rawScheduleDto.Note,
                 NumSubGroup = rawScheduleDto.NumSubGroup,
